@@ -1,0 +1,213 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+:root
+{
+    --color1: #fff ;
+    --color2: #333333 ;
+}
+body {
+    font-family: "Poppins", sans-serif;   
+}
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: var(--color2);
+    padding: 12px 20px;
+}
+.logo img {width: 60%;}
+.menu {display: flex;}
+.menu li {padding-left: 30px;}
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
+}
+.menu li a:hover:after {width: 100%;}
+.open-menu , .close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.open-menu {
+    top: 25px;
+    right: 25px;
+    transform: translateY(-50%);
+}
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+#check {display: none;}
+
+.hero-container{
+position: relative;
+height:550px;
+overflow: hidden;
+background-size: cover;
+background-color: var(--color2);
+
+}
+.container{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);  
+    overflow: hidden;
+    text-align: center;
+    color: var(--color1);
+    font-weight: 700;
+}
+.container h1{
+    font-size: 72px;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 10px var(--color2);
+}
+.container h1 span{
+   border: 10px solid var(--color1);
+   border-radius: 10px 10px;
+   padding: 6px 14px;
+   display: inline-block;
+   box-shadow: 0 0 10px var(--color2);
+   -webkit-border-radius: 10px 10px;
+   -moz-border-radius: 10px 10px;
+   -ms-border-radius: 10px 10px;
+   -o-border-radius: 10px 10px;
+}
+.description{
+    margin:20px;
+    display: block;
+    font-size: 26px;
+    text-shadow: 0 0 10px var(--color2);
+}
+.btn-explore
+{
+    text-decoration: none;
+    color: var(--color2);
+    background: var(--color1);
+    padding: 16px 32px;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px 10px;
+    -webkit-border-radius: 10px 10px;
+    -moz-border-radius: 10px 10px;
+    -ms-border-radius: 10px 10px;
+    -o-border-radius: 10px 10px;
+}
+.btn-explore:hover {
+    background-color: #555555;
+    color: white;
+  }
+  .grid-section{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 2rem;
+  }
+  .grid-section img{
+    margin: auto;
+    display: block;
+    width: 800px;
+  }
+  .grid-section p{
+    margin-top: 1rem;
+  }
+  .grid-section h2{
+    margin-top: 1rem;
+    font-size: 50px;
+    text-align: center;
+  }
+  footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;   
+    color: var(--color1);
+    background-color: var(--color2);   
+  }
+  footer li{
+    list-style: none;
+    margin-top: 10px;   
+  }
+  footer a{   
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+  }
+  footer a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
+}
+footer a:hover:after {width: 100%;}
+  footer td{
+    text-align: center;
+  }
+@media(max-width: 900px){
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+    .grid-section{
+        display: grid;
+        grid-template-columns: 100%;
+        
+      }
+      .grid-section img{
+        margin: auto;
+        display: block;
+        width: max-content;
+      }     
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
+    .open-menu , .close-menu {display: block;}
+    #check:checked ~ .menu {right: 0;}
+}
